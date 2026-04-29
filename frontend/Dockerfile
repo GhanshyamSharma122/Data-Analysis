@@ -6,6 +6,8 @@ RUN npm install
 
 COPY . .
 
+ENV GENERATE_SOURCEMAP=false
+ENV NODE_OPTIONS=--max-old-space-size=512
 RUN npm run build
 
 RUN npm install -g serve
